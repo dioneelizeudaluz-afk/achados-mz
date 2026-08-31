@@ -5,15 +5,25 @@ export default function DocumentDetails() {
   const navigate = useNavigate()
 
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Detalhes do Documento</h1>
-      <p className="text-gray-600">ID: {id}</p>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0 }}>
+        Detalhes do Documento
+      </h1>
+      <p style={{ color: '#6b7280', margin: 0 }}>ID: {id}</p>
       <button
         onClick={() => navigate('/')}
-        className="bg-blue-700 text-white px-6 py-3 rounded-lg"
+        style={{
+          padding: '12px 24px',
+          backgroundColor: '#1d4ed8',
+          color: 'white',
+          border: 'none',
+          borderRadius: '8px',
+          fontSize: '16px',
+          cursor: 'pointer'
+        }}
       >
         Voltar
       </button>
     </div>
   )
-}
+          }
