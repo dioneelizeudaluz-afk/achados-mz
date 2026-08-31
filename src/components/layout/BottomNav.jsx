@@ -1,5 +1,5 @@
 import { useNavigate, useLocation } from 'react-router-dom'
-import { Home, Search, PlusCircle, FileText } from 'lucide-react'
+import { Home, Search, PlusCircle, FileText, Printer } from 'lucide-react'
 
 export default function BottomNav() {
   const navigate = useNavigate()
@@ -9,7 +9,7 @@ export default function BottomNav() {
     { path: '/', icon: Home, label: 'Inicio' },
     { path: '/search', icon: Search, label: 'Procurar' },
     { path: '/register-found', icon: PlusCircle, label: 'Registar' },
-    { path: '/register-lost', icon: FileText, label: 'Perdidos' }
+    { path: '/print-documents', icon: Printer, label: 'Imprimir' }
   ]
 
   return (
@@ -56,4 +56,4 @@ export default function BottomNav() {
       </div>
     </nav>
   )
-        }
+                }
