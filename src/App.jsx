@@ -5,6 +5,7 @@ import Search from './pages/Search'
 import RegisterFound from './pages/RegisterFound'
 import RegisterLost from './pages/RegisterLost'
 import DocumentDetails from './pages/DocumentDetails'
+import PrintDocuments from './pages/PrintDocuments'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
 
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="register-found" element={<RegisterFound />} />
           <Route path="register-lost" element={<RegisterLost />} />
           <Route path="document/:id" element={<DocumentDetails />} />
+          <Route path="print-documents" element={<PrintDocuments />} />
         </Route>
         <Route path="/admin" element={<AdminLogin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
