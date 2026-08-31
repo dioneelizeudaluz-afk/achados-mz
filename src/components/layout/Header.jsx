@@ -1,17 +1,16 @@
 import { useNavigate } from 'react-router-dom'
-import { Shield } from 'lucide-react'
 
 export default function Header() {
   const navigate = useNavigate()
 
   return (
     <header style={{
-      backgroundColor: '#1d4ed8',
-      color: 'white',
+      backgroundColor: 'white',
+      borderBottom: '1px solid #e5e7eb',
       position: 'sticky',
       top: 0,
       zIndex: 50,
-      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+      boxShadow: '0 1px 3px rgba(0,0,0,0.05)'
     }}>
       <div style={{
         maxWidth: '448px',
@@ -29,14 +28,20 @@ export default function Header() {
             gap: '8px',
             background: 'none',
             border: 'none',
-            color: 'white',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            padding: 0
           }}
         >
-          <Shield size={24} />
-          <span style={{ fontSize: '18px', fontWeight: 'bold' }}>Achados MZ</span>
+          <img 
+            src="/logo-achados-mz.png" 
+            alt="Achados MZ"
+            style={{ 
+              height: '40px',
+              width: 'auto'
+            }}
+          />
         </button>
       </div>
     </header>
   )
-            }
+          }
