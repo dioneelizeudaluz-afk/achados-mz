@@ -13,8 +13,21 @@ export default function BottomNav() {
   ]
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-50">
-      <div className="max-w-md mx-auto grid grid-cols-4">
+    <nav style={{
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: 'white',
+      borderTop: '1px solid #e5e7eb',
+      zIndex: 50
+    }}>
+      <div style={{
+        maxWidth: '448px',
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)'
+      }}>
         {navItems.map((item) => {
           const isActive = location.pathname === item.path
           const Icon = item.icon
@@ -23,16 +36,24 @@ export default function BottomNav() {
             <button
               key={item.path}
               onClick={() => navigate(item.path)}
-              className={`flex flex-col items-center py-3 space-y-1 ${
-                isActive ? 'text-blue-700' : 'text-gray-500'
-              }`}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                padding: '12px 0',
+                gap: '4px',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                color: isActive ? '#1d4ed8' : '#6b7280'
+              }}
             >
-              <Icon className="h-6 w-6" />
-              <span className="text-xs font-medium">{item.label}</span>
+              <Icon size={24} />
+              <span style={{ fontSize: '12px', fontWeight: '500' }}>{item.label}</span>
             </button>
           )
         })}
       </div>
     </nav>
   )
-     }
+        }
