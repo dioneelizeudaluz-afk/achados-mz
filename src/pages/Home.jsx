@@ -1,62 +1,101 @@
 import { useNavigate } from 'react-router-dom'
-import { Search, PlusCircle, FileText, Shield, Lock, MapPin, FileCheck } from 'lucide-react'
+import { Search, PlusCircle, FileText, Shield, FileCheck } from 'lucide-react'
 
 export default function Home() {
   const navigate = useNavigate()
 
+  const buttonStyle = {
+    width: '100%',
+    padding: '16px',
+    borderRadius: '8px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '8px',
+    fontSize: '16px',
+    fontWeight: '500',
+    cursor: 'pointer',
+    border: 'none'
+  }
+
   return (
-    <div className="space-y-6">
-      <div className="text-center py-6">
-        <Shield className="h-16 w-16 mx-auto text-blue-700 mb-4" />
-        <h1 className="text-3xl font-bold text-gray-900">Achados MZ</h1>
-        <p className="text-gray-600 text-lg mt-2">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      {/* Hero */}
+      <div style={{ textAlign: 'center', padding: '24px 0' }}>
+        <Shield size={64} color="#1d4ed8" style={{ margin: '0 auto 16px' }} />
+        <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#111827', margin: 0 }}>
+          Achados MZ
+        </h1>
+        <p style={{ fontSize: '18px', color: '#6b7280', marginTop: '8px' }}>
           Plataforma de recuperacao de documentos perdidos
         </p>
       </div>
 
-      <div className="space-y-3">
+      {/* Buttons */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <button
           onClick={() => navigate('/search')}
-          className="w-full bg-blue-700 text-white py-4 rounded-lg flex items-center justify-center gap-2"
+          style={{ ...buttonStyle, backgroundColor: '#1d4ed8', color: 'white' }}
         >
-          <Search className="h-5 w-5" />
+          <Search size={20} />
           Procurar Documento
         </button>
 
         <button
           onClick={() => navigate('/register-found')}
-          className="w-full bg-white text-blue-700 border-2 border-blue-700 py-4 rounded-lg flex items-center justify-center gap-2"
+          style={{ 
+            ...buttonStyle, 
+            backgroundColor: 'white', 
+            color: '#1d4ed8',
+            border: '2px solid #1d4ed8'
+          }}
         >
-          <PlusCircle className="h-5 w-5" />
+          <PlusCircle size={20} />
           Registar Documento Encontrado
         </button>
 
         <button
           onClick={() => navigate('/register-lost')}
-          className="w-full bg-gray-100 text-gray-700 py-4 rounded-lg flex items-center justify-center gap-2"
+          style={{ ...buttonStyle, backgroundColor: '#e5e7eb', color: '#374151' }}
         >
-          <FileText className="h-5 w-5" />
+          <FileText size={20} />
           Comunicar Documento Perdido
         </button>
       </div>
 
-      <div className="bg-white rounded-lg p-6">
-        <h2 className="text-lg font-semibold mb-4">Documentos Suportados</h2>
-        <div className="grid grid-cols-3 gap-3">
-          <div className="text-center">
-            <FileCheck className="h-8 w-8 mx-auto text-blue-700 mb-2" />
-            <p className="font-medium">BI</p>
+      {/* Document Types */}
+      <div style={{
+        backgroundColor: 'white',
+        borderRadius: '8px',
+        padding: '24px',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+      }}>
+        <h2 style={{ fontSize: '18px', fontWeight: '600', marginBottom: '16px' }}>
+          Documentos Suportados
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          gap: '12px',
+          textAlign: 'center'
+        }}>
+          <div>
+            <FileCheck size={32} color="#1d4ed8" style={{ margin: '0 auto 8px' }} />
+            <p style={{ fontWeight: '500', margin: 0 }}>BI</p>
+            <p style={{ fontSize: '12px', color: '#6b7280', margin: 0 }}>Bilhete de Identidade</p>
           </div>
-          <div className="text-center">
-            <FileCheck className="h-8 w-8 mx-auto text-blue-700 mb-2" />
-            <p className="font-medium">Carta</p>
+          <div>
+            <FileCheck size={32} color="#1d4ed8" style={{ margin: '0 auto 8px' }} />
+            <p style={{ fontWeight: '500', margin: 0 }}>Carta</p>
+            <p style={{ fontSize: '12px', color: '#6b7280', margin: 0 }}>Carta de Conducao</p>
           </div>
-          <div className="text-center">
-            <FileCheck className="h-8 w-8 mx-auto text-blue-700 mb-2" />
-            <p className="font-medium">Passaporte</p>
+          <div>
+            <FileCheck size={32} color="#1d4ed8" style={{ margin: '0 auto 8px' }} />
+            <p style={{ fontWeight: '500', margin: 0 }}>Passaporte</p>
+            <p style={{ fontSize: '12px', color: '#6b7280', margin: 0 }}>Documento de Viagem</p>
           </div>
         </div>
       </div>
     </div>
   )
-}
+        }
