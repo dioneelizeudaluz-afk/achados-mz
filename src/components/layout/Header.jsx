@@ -5,16 +5,38 @@ export default function Header() {
   const navigate = useNavigate()
 
   return (
-    <header className="bg-blue-700 text-white sticky top-0 z-50 shadow-md">
-      <div className="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+    <header style={{
+      backgroundColor: '#1d4ed8',
+      color: 'white',
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+    }}>
+      <div style={{
+        maxWidth: '448px',
+        margin: '0 auto',
+        padding: '12px 16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
         <button 
           onClick={() => navigate('/')}
-          className="flex items-center gap-2"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: 'none',
+            border: 'none',
+            color: 'white',
+            cursor: 'pointer'
+          }}
         >
-          <Shield className="h-6 w-6" />
-          <span className="text-lg font-bold">Achados MZ</span>
+          <Shield size={24} />
+          <span style={{ fontSize: '18px', fontWeight: 'bold' }}>Achados MZ</span>
         </button>
       </div>
     </header>
   )
-    }
+            }
