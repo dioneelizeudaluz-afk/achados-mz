@@ -3,41 +3,66 @@ import { Search as SearchIcon } from 'lucide-react'
 
 export default function Search() {
   const [query, setQuery] = useState('')
-  const [results, setResults] = useState([])
   const [searched, setSearched] = useState(false)
 
-  const handleSearch = () => {
-    setSearched(true)
-    setResults([])
-  }
-
   return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Procurar Documento</h1>
-      
-      <div className="relative">
-        <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      <h1 style={{ fontSize: '24px', fontWeight: 'bold', margin: 0 }}>
+        Procurar Documento
+      </h1>
+
+      <div style={{ position: 'relative' }}>
+        <SearchIcon 
+          size={20} 
+          color="#9ca3af"
+          style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }}
+        />
         <input
           type="text"
           placeholder="Nome ou numero do documento"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-full pl-10 pr-4 py-3 border rounded-lg"
+          style={{
+            width: '100%',
+            padding: '16px 16px 16px 40px',
+            borderRadius: '8px',
+            border: '1px solid #d1d5db',
+            fontSize: '16px',
+            boxSizing: 'border-box'
+          }}
         />
       </div>
 
       <button
-        onClick={handleSearch}
-        className="w-full bg-blue-700 text-white py-3 rounded-lg"
+        onClick={() => setSearched(true)}
+        style={{
+          width: '100%',
+          padding: '16px',
+          backgroundColor: '#1d4ed8',
+          color: 'white',
+          border: 'none',
+          borderRadius: '8px',
+          fontSize: '16px',
+          fontWeight: '500',
+          cursor: 'pointer'
+        }}
       >
         Pesquisar
       </button>
 
-      {searched && results.length === 0 && (
-        <div className="text-center py-8 bg-white rounded-lg">
-          <p className="text-gray-500">Nenhum documento encontrado</p>
+      {searched && (
+        <div style={{
+          backgroundColor: 'white',
+          borderRadius: '8px',
+          padding: '32px',
+          textAlign: 'center',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+        }}>
+          <p style={{ color: '#6b7280', margin: 0 }}>
+            Nenhum documento encontrado
+          </p>
         </div>
       )}
     </div>
   )
-}
+            }
