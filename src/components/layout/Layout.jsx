@@ -4,10 +4,10 @@ import BottomNav from './BottomNav'
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
       <Header />
-      <main className="pb-20 pt-4">
-        <div className="max-w-md mx-auto px-4">
+      <main style={{ paddingBottom: '80px', paddingTop: '16px' }}>
+        <div style={{ maxWidth: '448px', margin: '0 auto', padding: '0 16px' }}>
           <Outlet />
         </div>
       </main>
