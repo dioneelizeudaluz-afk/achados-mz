@@ -4,23 +4,42 @@ export default function AdminDashboard() {
   const navigate = useNavigate()
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <header className="bg-blue-700 text-white p-4">
-        <h1 className="text-xl font-bold">Painel Administrativo</h1>
+    <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6' }}>
+      <header style={{ backgroundColor: '#1d4ed8', color: 'white', padding: '16px' }}>
+        <h1 style={{ fontSize: '20px', fontWeight: 'bold', margin: 0 }}>
+          Painel Administrativo
+        </h1>
       </header>
-      
-      <main className="p-4">
-        <div className="bg-white rounded-lg p-8 text-center">
-          <p className="text-gray-500">Nenhum documento registado ainda</p>
+
+      <main style={{ padding: '16px' }}>
+        <div style={{
+          backgroundColor: 'white',
+          borderRadius: '8px',
+          padding: '32px',
+          textAlign: 'center',
+          boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+        }}>
+          <p style={{ color: '#6b7280', margin: 0 }}>
+            Nenhum documento registado ainda
+          </p>
         </div>
-        
+
         <button
           onClick={() => navigate('/admin')}
-          className="mt-4 bg-gray-200 text-gray-700 px-4 py-2 rounded"
+          style={{
+            marginTop: '16px',
+            padding: '12px 24px',
+            backgroundColor: '#e5e7eb',
+            color: '#374151',
+            border: 'none',
+            borderRadius: '8px',
+            fontSize: '16px',
+            cursor: 'pointer'
+          }}
         >
           Sair
         </button>
       </main>
     </div>
   )
-}
+      }
