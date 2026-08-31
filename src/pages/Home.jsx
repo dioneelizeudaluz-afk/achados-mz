@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { Search, PlusCircle, FileText, Shield, FileCheck } from 'lucide-react'
+import { Search, PlusCircle, FileText, Shield, FileCheck, Printer } from 'lucide-react'
 
 export default function Home() {
   const navigate = useNavigate()
@@ -20,9 +20,17 @@ export default function Home() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-      {/* Hero */}
+      {/* Hero com Logotipo */}
       <div style={{ textAlign: 'center', padding: '24px 0' }}>
-        <Shield size={64} color="#1d4ed8" style={{ margin: '0 auto 16px' }} />
+        <img 
+          src="/logo-achados-mz.png" 
+          alt="Achados MZ"
+          style={{ 
+            height: '80px',
+            margin: '0 auto 16px',
+            display: 'block'
+          }}
+        />
         <h1 style={{ fontSize: '32px', fontWeight: 'bold', color: '#111827', margin: 0 }}>
           Achados MZ
         </h1>
@@ -31,7 +39,7 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Buttons */}
+      {/* Botoes de Acao */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
         <button
           onClick={() => navigate('/search')}
@@ -61,9 +69,17 @@ export default function Home() {
           <FileText size={20} />
           Comunicar Documento Perdido
         </button>
+
+        <button
+          onClick={() => navigate('/print-documents')}
+          style={{ ...buttonStyle, backgroundColor: '#fef3c7', color: '#92400e' }}
+        >
+          <Printer size={20} />
+          Impressao de Documentos
+        </button>
       </div>
 
-      {/* Document Types */}
+      {/* Documentos Suportados */}
       <div style={{
         backgroundColor: 'white',
         borderRadius: '8px',
@@ -96,6 +112,24 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Seguranca */}
+      <div style={{
+        backgroundColor: '#eff6ff',
+        borderRadius: '8px',
+        padding: '20px'
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+          <Shield size={18} color="#1d4ed8" />
+          <h2 style={{ fontSize: '16px', fontWeight: '600', color: '#1e40af', margin: 0 }}>
+            Seguranca e Privacidade
+          </h2>
+        </div>
+        <p style={{ fontSize: '14px', color: '#374151', margin: 0, lineHeight: '1.5' }}>
+          Todos os dados pessoais sao protegidos e mascarados.
+          Apenas informacoes necessarias sao exibidas publicamente.
+        </p>
+      </div>
     </div>
   )
-        }
+          }
